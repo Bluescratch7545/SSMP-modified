@@ -5,7 +5,7 @@ namespace SSMP.Game.Client.Skin;
 /// <summary>
 /// Data class for player skin textures.
 /// </summary>
-internal class PlayerSkin {
+public class PlayerSkin {
     /// <summary>
     /// Whether this skin contains the hornet texture.
     /// </summary>
