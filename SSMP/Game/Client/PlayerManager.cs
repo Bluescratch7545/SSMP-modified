@@ -53,6 +53,11 @@ internal class PlayerManager : IPlayerManager {
     /// The skin manager instance.
     /// </summary>
     private readonly SkinManager _skinManager;
+    
+    /// <summary>
+    /// The skin loader instance.
+    /// </summary>
+    private readonly SkinLoader _skinLoader;
 
     /// <summary>
     /// Reference to the client player data dictionary (<see cref="ClientManager._playerData"/>)
@@ -95,6 +100,8 @@ internal class PlayerManager : IPlayerManager {
         _serverSettings = serverSettings;
 
         _skinManager = new SkinManager();
+
+        _skinLoader = new SkinLoader();
 
         _playerData = playerData;
 
