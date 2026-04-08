@@ -14,12 +14,12 @@ public class SkinLoader {
     /// Temporary boolean that dictates whether skin loading is enabled.
     /// </summary>
     /// TODO: implement skins
-    private static readonly bool Disabled = true;
+    private static readonly bool Disabled = false;
     
     /// <summary>
     /// The name of the mod folder within the Silksong plugin folder.
     /// </summary>
-    private const string ModFolderName = "SSMP";
+    private const string ModFolderName = "SSMP-SSMP";
 
     /// <summary>
     /// The name of the skin folder in the SSMP mod folder.
@@ -50,9 +50,9 @@ public class SkinLoader {
         var modsFolderPath = GetModsFolder();
 
         _skinFolderPath = CombinePaths(modsFolderPath, ModFolderName, SkinFolderName);
-        // if (!Directory.Exists(_skinFolderPath)) {
-            // Directory.CreateDirectory(_skinFolderPath);
-        // }
+        if (!Directory.Exists(_skinFolderPath)) {
+            Directory.CreateDirectory(_skinFolderPath);
+        }
     }
 
     /// <summary>
@@ -232,7 +232,7 @@ public class SkinLoader {
             case OperatingSystemFamily.MacOSX:
                 return Path.GetFullPath($"{Application.dataPath}/Resources/Data/Managed/Mods");
             default:
-                return Path.GetFullPath($"{Application.dataPath}/Managed/Mods");
+                return Path.GetFullPath($"{Application.dataPath}/plugins/");
         }
     }
 
