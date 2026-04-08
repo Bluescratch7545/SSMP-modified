@@ -9,7 +9,7 @@ namespace SSMP.Game.Client.Skin;
 /// <summary>
 /// Class responsible for disk interaction for all skin related operations.
 /// </summary>
-internal class SkinLoader {
+public class SkinLoader {
     /// <summary>
     /// Temporary boolean that dictates whether skin loading is enabled.
     /// </summary>
@@ -165,7 +165,7 @@ internal class SkinLoader {
     /// <param name="playerSkin">If the method returns, will contain the loaded player skin or a fallback
     /// empty player skin if no skin could be loaded.</param>
     /// <returns>true if the skin could be loaded, false otherwise.</returns>
-    private bool LoadTexturesForSkin(string path, out PlayerSkin playerSkin) {
+    public bool LoadTexturesForSkin(string path, out PlayerSkin playerSkin) {
         // Fallback out value to make sure we can always return false if loading failed
         playerSkin = new PlayerSkin();
 
@@ -193,7 +193,7 @@ internal class SkinLoader {
     /// <param name="texture">If the method returns, will contain the loaded texture or null if no texture
     /// could be loaded.</param>
     /// <returns>true if the texture could be loaded, false otherwise.</returns>
-    private bool LoadTexture(string filePath, [MaybeNullWhen(false)] out Texture2D texture) {
+    public bool LoadTexture(string filePath, [MaybeNullWhen(false)] out Texture2D texture) {
         texture = null;
 
         if (!File.Exists(filePath)) {
